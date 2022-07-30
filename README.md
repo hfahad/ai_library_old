@@ -4,3 +4,4 @@ This Repository contains several files:
 2)  NeuralNet.py contains CNN architecture with torch library.
 3)  Training from Scratch use Train.py file.
 4)  Evaluation.py for testing the data set this file also gives you a confusion matrix evaluation in the results folder.
+5)  runs forlder contains tensorboard file.
