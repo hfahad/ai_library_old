@@ -20,13 +20,9 @@ def Evaluation(data_dir, model_path):
     Net.load_state_dict(torch.load(os.path.join(
         model_path, "model_shape.pth"), map_location='cpu'))
    # collecting a data
-    trainData = DataGeneration(data_dir, train=True)
-    # Training and Validation Split
-    trainData, valData = train_test_split(trainData,
-                                          random_state=10,
-                                          test_size=0.25)
+    trainData = DataGeneration(data_dir, train=False)
     # Data Loader
-    val_Loader = DataLoader(valData, shuffle=True, batch_size=1)
+    val_Loader = DataLoader(trainData, shuffle=True, batch_size=1)
     with torch.no_grad():
         Net.eval()
         loss = 0
@@ -74,4 +70,4 @@ def Confusion_matrix(y_true, y_pred):
 
 if __name__ == "__main__":
 
-    Evaluation('/data', '/model')
+    Evaluation('./data', './models')
