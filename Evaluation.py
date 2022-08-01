@@ -18,7 +18,7 @@ def Evaluation(data_dir, model_path):
     device = "cpu"
     Net = NeuralNet(1, 3, 5).to(device)
     Net.load_state_dict(torch.load(os.path.join(
-        model_path, "model_shape.pth"), map_location='cpu'))
+        model_path, "model_shapes.pth"), map_location='cpu'))
    # collecting a data
     trainData = DataGeneration(data_dir, train=False)
     # Data Loader
